@@ -7,7 +7,7 @@
 ```
 $ psql
 =# CREATE DATABASE test;
-=# \connect test;
+=# \c test;
 =# CREATE TABLE test(name varchar(10), id integer);
 ```
 
@@ -125,7 +125,7 @@ ORDER BY後に指定する[対象カラム]で、どのカラムについて昇�
 #### LIMIT
 postgreSQLでは、以下のような構文が利用できる。
 ```
-SELECT [selectカラム1], [selectカラム2] from [テーブル名] LIMIT n
+SELECT [selectカラム1], [selectカラム2] from [テーブル名] LIMIT n;
 ```
 
 LIMITの後のnには整数値が入る。  
@@ -149,7 +149,7 @@ jack |  2
 #### OFFSET
 postgreSQLでは、以下のような構文になる。
 ```
-SELECT [selectカラム1], [selectカラム2], ... FROM [テーブル名] OFFSET n
+SELECT [selectカラム1], [selectカラム2], ... FROM [テーブル名] OFFSET n;
 ```
 
 OFFSET後にあるnには整数が入る。ここで指定したnの値は、返ってくるレコードの開始位置を表しており、期待される出力のうち、最初のレコードから飛ばす行数を指定する。  
@@ -192,7 +192,7 @@ john |  3
 ### WHERE節
 SELECTでWHERE節を利用することで、比較演算子を用いて複雑な条件を満たすようなレコードを取得することが出来る。
 ```
-SELECT * FROM test WHERE [条件式]
+SELECT * FROM test WHERE [条件式];
 ```
 
 以下の節では条件式に用いることの出来る句を示す。
@@ -211,7 +211,7 @@ NOTは他の句と組み合わせて使うことが多く、[句]の部分には
 
 #### NULL
 ```
-SELECT * FROM test WHERE [カラム名] IS NULL
+SELECT * FROM test WHERE [カラム名] IS NULL;
 ```
 
 [カラム名]にはNULLの判定をしたいカラム名が入る。  
